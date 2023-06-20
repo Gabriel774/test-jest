@@ -1,0 +1,8 @@
+.btn-container {
+    display: flex;
+    gap: 15px
+}
+
+#count {
+    font-size: 72px;
+}

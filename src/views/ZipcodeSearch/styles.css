@@ -1,0 +1,23 @@
+.inp-search {
+    border: 5px solid #9FA0FF;
+    border-right: 0;
+    background-color: white;
+    outline: none;
+    font-size: 19px;
+    padding: 7px 20px;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.btn-search {
+    border-radius: 0px 10px 10px 0px;
+    padding: 7px 20px;
+    font-size: 19px;
+    border: 5px solid #9FA0FF;
+    background-color: #9FA0FF;
+    outline: none;
+    cursor: pointer;
+}
+
+.error-search {
+    color: tomato;
+}

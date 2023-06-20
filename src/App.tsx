@@ -1,24 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes, NavLink } from "react-router-dom";
+import "./App.css";
+import Counter from "./views/Counter/Index";
+import ZipcodeSearch from "./views/ZipcodeSearch";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div id="nav-container">
+        <NavLink
+          to="/"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "active" : ""
+          }
+          style={{
+            borderRight: 0,
+            borderTopRightRadius: 0,
+            borderBottomRightRadius: 0,
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          Contador
+        </NavLink>
+        <NavLink
+          to="/buscar-cep"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "active" : ""
+          }
+          style={{
+            borderLeft: 0,
+            borderTopLeftRadius: 0,
+            borderBottomLeftRadius: 0,
+          }}
+        >
+          Buscador de CEP
+        </NavLink>
+      </div>
+
+      <Routes>
+        <Route path="/" element={<Counter />} />
+        <Route path="/buscar-cep" element={<ZipcodeSearch />} />
+      </Routes>
     </div>
   );
 }
